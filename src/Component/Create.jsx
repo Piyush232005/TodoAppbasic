@@ -25,19 +25,12 @@ const Create = (props) => {
         settitle("");
     };
 
-    const buttoncss = {
-        color: "black",
-        padding: "5px 10px",
-        backgroundColor: "Red",
-        border: "1px solid white",
-        borderRadius: "5px",
-    };
-
     return (
-        <>
-            <h1>Create Tasks</h1>
+        <div className="w-[65%] p-10 ">
+            <h1 className=" mb-10 text-5xl font-thin">Set <span className="text-red-400">Reminder </span> For <br /> Task</h1>
             <form onSubmit={SubmitHandler}>
                 <input
+                    className="border-b w-full text-2xl font-thin p-2 outline-0"
                     onChange={(e) => settitle(e.target.value)}
                     value={title}
                     type="text"
@@ -45,9 +38,9 @@ const Create = (props) => {
                 />
                 <br />
                 <br />
-                <button style={buttoncss}>Create Todo</button>
+                <button className="text-xl px-10 py-2 mt-5 border rounded">Create Todo</button>
             </form>
-        </>
+        </div>
     );
 };
 

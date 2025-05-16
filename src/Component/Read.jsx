@@ -4,22 +4,31 @@ const Read = (props) => {
     const todos = props.todos;
     const settodos = props.settodos;
 
+
+    const DeleteHandler = (id)=> {
+        const filtertodo = todos.filter((todo) => todo.id !=id);
+        settodos(filtertodo);
+    }
+
     const rendertodos = todos.map((todo) => {
         return (
             <li
-                style={{ color: todo.isCompleted ? "green" : "tomato" }}
-                key={todo.id}
+                key={todo.id} className="mb-2 flex justify-between item-center p-4 bg-gray-900"
             >
-                {todo.title}
+                <span className="text-xl font-thin">{todo.title} </span>
+                <buttom className = "font-thin text-red-400"
+                onClick={() =>DeleteHandler(todo.id)}>Delete</buttom>
             </li>
         );
     });
 
+    
+
     return (
-        <Fragment>
-            <h1 style={{ color: "tomato" }}>Pending Todos</h1>
+        <div className="w-[35%] ">
+            <h1 className=" mb-10 text-5xl font-thin p-10"><span className="text-Pink-400">Pendings </span>Todos</h1>
             <ol>{rendertodos}</ol>
-        </Fragment>
+        </div>
     );
 };
 
