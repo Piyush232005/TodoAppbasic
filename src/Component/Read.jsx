@@ -1,9 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { toast } from "react-toastify";
+import { todocontext } from "../Wrapper";
 
-const Read = (props) => {
-    const todos = props.todos;
-    const settodos = props.settodos;
+const Read = () => {
+    const [todos, settodos] =  useContext(todocontext);
 
 
     const DeleteHandler = (id)=> {
